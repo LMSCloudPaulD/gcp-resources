@@ -12,6 +12,9 @@ if ! groups | grep "\bdocker\b" >/dev/null; then
     exit 1
 fi
 
+# Clean the directory before cloning the repository
+rm -rf koha-testing-docker
+
 # Clone koha-testing-docker repository from GitLab
 git clone https://gitlab.com/koha-community/koha-testing-docker.git
 
