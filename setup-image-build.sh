@@ -59,9 +59,9 @@ cd $LMS_PROJECTS_DIR
 rm -rf LMSTestingDocker
 git clone https://github.com/LMSCloud/LMSTestingDocker.git $LMS_KTD_HOME
 
-cd $KTD_HOME
+cd $LMS_KTD_HOME
 git checkout -b ktd-lms
-rsync -a --exclude='*.md' $LMS_KTD_HOME/* $KTD_HOME
+rsync -a --exclude='*.md' $LMS_KTD_HOME/ $KTD_HOME/
 
 echo "LMSTestingDocker repository set up successfully."
 
