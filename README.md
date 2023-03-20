@@ -1,2 +1,3 @@
 # gcp-resources
-Installs docker on a GCP [debian] instance.
+
+Scripts to improve workflows on GCP.
