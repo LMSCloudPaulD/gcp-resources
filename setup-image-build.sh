@@ -12,12 +12,6 @@ if ! groups | grep "\bdocker\b" >/dev/null; then
     exit 1
 fi
 
-# Check if koha-testing-docker repository exists
-if [ ! -d "koha-testing-docker" ]; then
-    echo "koha-testing-docker repository not found. Please run the previous script first."
-    exit 1
-fi
-
 # Set up required environment variables
 export LMS_PROJECTS_DIR=~/.local/src/lmsc
 export LMS_PROJECTS_DIR="$LMS_PROJECTS_DIR"
