@@ -24,9 +24,10 @@ export LMS_PROJECTS_DIR=~/.local/src/lmsc
 export LMS_PROJECTS_DIR="$LMS_PROJECTS_DIR"
 export LMS_SYNC_REPO=$LMS_PROJECTS_DIR/Koha-LMSCloud
 export LMS_KTD_HOME=$LMS_PROJECTS_DIR/LMSTestingDocker
+export KTD_HOME=$LMS_PROJECTS_DIR/koha-testing-docker
 
 # Check if required environment variables are set up
-if [ -z "$LMS_PROJECTS_DIR" ] || [ -z "$LMS_SYNC_REPO" ] || [ -z "$LMS_KTD_HOME" ]; then
+if [ -z "$LMS_PROJECTS_DIR" ] || [ -z "$LMS_SYNC_REPO" ] || [ -z "$LMS_KTD_HOME" ] || [ -z "$KTD_HOME" ]; then
     echo "Error: Required environment variables not found. Please set up the environment variables first." >&2
     exit 1
 fi
@@ -42,7 +43,7 @@ rm -rf koha-testing-docker
 git clone https://gitlab.com/koha-community/koha-testing-docker.git
 
 # Check if the repository was cloned successfully
-if [ ! -d "koha-testing-docker" ]; then
+if [ ! -d "$KTD_HOME" ]; then
     echo "Error: koha-testing-docker repository was not cloned successfully." >&2
     exit 1
 fi
