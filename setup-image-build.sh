@@ -12,6 +12,15 @@ if ! groups | grep "\bdocker\b" >/dev/null; then
     exit 1
 fi
 
+# Clone koha-testing-docker repository from GitLab
+git clone https://gitlab.com/koha-community/koha-testing-docker.git
+
+# Check if the repository was cloned successfully
+if [ ! -d "koha-testing-docker" ]; then
+    echo "Error: koha-testing-docker repository was not cloned successfully." >&2
+    exit 1
+fi
+
 # Set up required environment variables
 export LMS_PROJECTS_DIR=~/.local/src/lmsc
 export LMS_PROJECTS_DIR="$LMS_PROJECTS_DIR"
